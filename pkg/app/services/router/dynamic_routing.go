@@ -45,6 +45,8 @@ func (s *Service) bindNewRoutes(allServices *[]interface{}) {
 			continue
 		}
 
+		s.Msgf("found new route initializer service %s", svcToInit.Name())
+
 		if err := svcToInit.InitRoutes(s.root.Group(svcToInit.Slug())); err == nil {
 			s.Msgf("bound routes for %s service", svcToInit.Name())
 			s.boundServices[svcToInit.Name()] = nil // make 0-size entry

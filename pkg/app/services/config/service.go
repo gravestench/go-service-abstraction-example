@@ -2,6 +2,7 @@ package config
 
 import (
 	"fmt"
+	"sync"
 
 	"github.com/gravestench/go-service-abstraction-example/pkg/app/services/abstract"
 )
@@ -12,12 +13,14 @@ type perServiceConfig = map[string]map[string]string
 type Service struct {
 	store perServiceConfig
 	log   abstract.Logger
+	mux   sync.Mutex
 }
 
 func (s *Service) Init(allServices *[]interface{}) {
 	s.populateDependencies(allServices)
 
 	s.store = make(perServiceConfig)
+	
 	s.LoadConfig()
 	go s.loopSaveConfig()
 }

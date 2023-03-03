@@ -24,6 +24,7 @@ func (s *Service) Init(allServices *[]interface{}) {
 	s.loadConfig()
 	s.createRouter()
 	go s.beginDynamicRouteBinding(allServices)
+	go s.handleConfigChanges()
 }
 
 func (s *Service) Name() string {

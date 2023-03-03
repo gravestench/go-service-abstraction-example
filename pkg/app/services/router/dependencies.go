@@ -8,7 +8,7 @@ import (
 
 func (s *Service) populateDependencies(others *[]interface{}) {
 	for {
-		if s.log != nil {
+		if s.log != nil && s.cfgManager != nil {
 			break
 		}
 
