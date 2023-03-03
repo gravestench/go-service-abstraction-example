@@ -20,7 +20,7 @@ func (s *Service) Init(allServices *[]interface{}) {
 	s.populateDependencies(allServices)
 
 	s.store = make(perServiceConfig)
-	
+
 	s.LoadConfig()
 	go s.loopSaveConfig()
 }

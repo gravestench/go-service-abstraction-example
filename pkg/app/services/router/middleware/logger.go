@@ -75,5 +75,5 @@ func logSwitch(data *ginHands) {
 		fmt.Sprintf("status: '%v'", data.StatusCode),
 	}
 
-	e.Msgf("{%s} %s", strings.Join(parts, " "), data.MsgStr)
+	e.Msgf("[Route Manager] {%s} %s", strings.Join(parts, " "), data.MsgStr)
 }
