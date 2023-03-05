@@ -4,7 +4,11 @@ go 1.18
 
 require (
 	github.com/foomo/simplecert v1.8.4
+	github.com/foomo/tlsconfig v0.0.0-20180418120404-b67861b076c9
+	github.com/gin-contrib/gzip v0.0.6
+	github.com/gin-contrib/sessions v0.0.5
 	github.com/gin-gonic/gin v1.9.0
+	github.com/jmoiron/sqlx v1.3.5
 	github.com/rs/zerolog v1.29.0
 )
 
@@ -21,10 +25,14 @@ require (
 	github.com/Azure/go-autorest/autorest/validation v0.3.1 // indirect
 	github.com/Azure/go-autorest/logger v0.2.0 // indirect
 	github.com/Azure/go-autorest/tracing v0.6.0 // indirect
+	github.com/Juniper/go-netconf v0.3.0 // indirect
 	github.com/OpenDNS/vegadns2client v0.0.0-20180418235048-a3fa4a771d87 // indirect
 	github.com/akamai/AkamaiOPEN-edgegrid-golang v1.0.1 // indirect
 	github.com/aliyun/alibaba-cloud-sdk-go v1.61.869 // indirect
+	github.com/antchfx/xmlquery v1.3.13 // indirect
+	github.com/antchfx/xpath v1.2.1 // indirect
 	github.com/aws/aws-sdk-go v1.36.29 // indirect
+	github.com/boj/redistore v0.0.0-20180917114910-cd5dcc76aeff // indirect
 	github.com/boombuler/barcode v1.0.1-0.20190219062509-6c824513bacc // indirect
 	github.com/bytedance/sonic v1.8.0 // indirect
 	github.com/cenkalti/backoff/v4 v4.1.0 // indirect
@@ -37,7 +45,6 @@ require (
 	github.com/dnsimple/dnsimple-go v0.63.0 // indirect
 	github.com/exoscale/egoscale v0.40.0 // indirect
 	github.com/fatih/structs v1.1.0 // indirect
-	github.com/foomo/tlsconfig v0.0.0-20180418120404-b67861b076c9 // indirect
 	github.com/form3tech-oss/jwt-go v3.2.2+incompatible // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-acme/lego/v4 v4.1.3 // indirect
@@ -49,13 +56,17 @@ require (
 	github.com/goccy/go-json v0.10.0 // indirect
 	github.com/gofrs/uuid v4.0.0+incompatible // indirect
 	github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e // indirect
-	github.com/golang/protobuf v1.5.0 // indirect
+	github.com/golang/protobuf v1.5.2 // indirect
+	github.com/gomodule/redigo v2.0.0+incompatible // indirect
 	github.com/goodhosts/hostsfile v0.0.7 // indirect
 	github.com/google/go-querystring v1.0.0 // indirect
 	github.com/google/uuid v1.1.5 // indirect
 	github.com/googleapis/gax-go/v2 v2.0.5 // indirect
 	github.com/gophercloud/gophercloud v0.15.0 // indirect
 	github.com/gophercloud/utils v0.0.0-20210113034859-6f548432055a // indirect
+	github.com/gorilla/context v1.1.1 // indirect
+	github.com/gorilla/securecookie v1.1.1 // indirect
+	github.com/gorilla/sessions v1.2.1 // indirect
 	github.com/hashicorp/go-cleanhttp v0.5.1 // indirect
 	github.com/hashicorp/go-retryablehttp v0.6.8 // indirect
 	github.com/iij/doapi v0.0.0-20190504054126-0bbf12d6d7df // indirect
@@ -89,6 +100,7 @@ require (
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/pquerna/otp v1.3.0 // indirect
+	github.com/quasoft/memstore v0.0.0-20191010062613-2bce066d2b0b // indirect
 	github.com/sacloud/libsacloud v1.36.2 // indirect
 	github.com/sirupsen/logrus v1.7.0 // indirect
 	github.com/stretchr/objx v0.5.0 // indirect

@@ -54,7 +54,7 @@ func (a *App) addService(s abstract.Service) {
 	a.services = append(a.services, s)
 
 	if a.log != nil {
-		a.log.Info().Msgf("[%s] initializing service ...", s.Name())
+		a.log.Info().Msgf("[APP] initializing '%s' service", s.Name())
 	}
 
 	go s.Init(&a.services)
@@ -62,5 +62,5 @@ func (a *App) addService(s abstract.Service) {
 
 func (a *App) Run() {
 	_ = <-a.quit
-	a.log.Info().Msg("exiting")
+	a.log.Info().Msg("[APP] exiting")
 }

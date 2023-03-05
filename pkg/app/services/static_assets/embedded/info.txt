@@ -1,0 +1,2 @@
+You should put stuff like frontend web assets in this directory.
+These assets will be compiled into the binary.

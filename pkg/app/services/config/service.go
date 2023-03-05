@@ -11,12 +11,16 @@ import (
 type perServiceConfig = map[string]map[string]string
 
 type Service struct {
-	store perServiceConfig
-	log   abstract.Logger
-	mux   sync.Mutex
+	store          perServiceConfig
+	log            abstract.Logger
+	mux            sync.Mutex
+	ConfigFilePath string
 }
 
 func (s *Service) Init(allServices *[]interface{}) {
+	s.mux.Lock()
+	defer s.mux.Unlock()
+
 	s.populateDependencies(allServices)
 
 	s.store = make(perServiceConfig)

@@ -10,11 +10,15 @@ import (
 )
 
 const (
-	configFilePath = ".testconfig"
+	defaultConfigFilePath = ".testconfig"
 )
 
 func (s *Service) getConfigFile() (*os.File, error) {
-	fp, err := filepath.Abs(configFilePath)
+	if s.ConfigFilePath == "" {
+		s.ConfigFilePath = defaultConfigFilePath
+	}
+
+	fp, err := filepath.Abs(s.ConfigFilePath)
 	if err != nil {
 		return nil, fmt.Errorf("getting absolute path: %v", err)
 	}
@@ -25,6 +29,10 @@ func (s *Service) getConfigFile() (*os.File, error) {
 	}
 
 	return fh, nil
+}
+
+func (s *Service) SetConfigFile(fpath string) {
+	s.ConfigFilePath = fpath
 }
 
 func (s *Service) LoadConfig() {

@@ -21,6 +21,7 @@ func New() *Service {
 		FormatLevel: func(i interface{}) string {
 			return strings.ToUpper(fmt.Sprintf("[%s]", i))
 		},
+		NoColor: true,
 	}
 
 	s := &Service{
@@ -34,11 +35,11 @@ type Service struct {
 	l zerolog.Logger
 }
 
-func (s Service) Init(_ *[]interface{}) {
+func (s *Service) Init(_ *[]interface{}) {
 	// noop
 }
 
-func (s Service) Name() string {
+func (s *Service) Name() string {
 	return "Logging"
 }
 
