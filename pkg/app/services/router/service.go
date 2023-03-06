@@ -16,6 +16,9 @@ type Service struct {
 	config        struct {
 		debug bool
 	}
+	flags struct {
+		slug string
+	}
 }
 
 func (s *Service) Init(allServices *[]interface{}) {

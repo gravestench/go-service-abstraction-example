@@ -21,4 +21,5 @@ type ValueControl interface {
 	Set(key string, value any)
 	Touch(key string)
 	Default(key string, val any)
+	Delete(string)
 }

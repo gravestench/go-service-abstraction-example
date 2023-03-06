@@ -49,6 +49,10 @@ type Service struct {
 	log abstract.Logger
 	cfg abstract.ValueControl
 
+	flags struct {
+		sqliteFilePath string
+	}
+
 	db *sqlx.DB
 }
 
@@ -92,7 +96,7 @@ func (s *Service) setupDatabase() {
 	case typeMysql:
 	}
 
-	s.log.Fatal().Msgf("opening database: %v", err)
+	s.log.Error().Msgf("opening database: %v", err)
 }
 
 func (s *Service) dbConnectionString(dbType string) string {

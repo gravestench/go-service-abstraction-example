@@ -10,6 +10,7 @@ func (s *Service) Group(name string) abstract.ValueControl {
 		fnSet:     func(key string, val any) { s.Set(name, key, val) },
 		fnTouch:   func(key string) { s.Touch(name, key) },
 		fnDefault: func(key string, val any) { s.Default(name, key, val) },
+		fnDelete:  func(key string) { s.Delete(name, key) },
 	}
 }
 
@@ -18,9 +19,11 @@ type tx struct {
 	fnSet     func(key string, val any)
 	fnTouch   func(key string)
 	fnDefault func(key string, val any)
+	fnDelete  func(key string)
 }
 
 func (t tx) Get(key string) string       { return t.fnGet(key) }
 func (t tx) Set(key string, val any)     { t.fnSet(key, val) }
 func (t tx) Touch(key string)            { t.fnTouch(key) }
 func (t tx) Default(key string, val any) { t.fnDefault(key, val) }
+func (t tx) Delete(key string)           { t.fnDelete(key) }
