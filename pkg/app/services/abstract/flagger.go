@@ -4,7 +4,9 @@ import (
 	"flag"
 )
 
-// FlagService uses command line flags
+// FlagService is what a service should implement if it uses CLI flags.
+// This is inteded to be picked up by an additional service which knows how
+// to filter the flags in `os.Args` to be just the ones that the target service needs.
 type FlagService interface {
 	Service
 	// Flags yields the flags that the service needs, to filter out

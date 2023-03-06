@@ -16,6 +16,8 @@ type ConfigurationManager interface {
 	Delete(...string)
 }
 
+// ValueControl is an interface for managing values
+// inside a group being managed within the config manager
 type ValueControl interface {
 	Get(key string) string
 	Set(key string, value any)
