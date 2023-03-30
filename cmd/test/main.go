@@ -1,30 +1,34 @@
 package main
 
 import (
+	"github.com/faiface/mainthread"
+
 	"github.com/gravestench/go-service-abstraction-example/pkg/app"
-	"github.com/gravestench/go-service-abstraction-example/pkg/app/services/config"
-	"github.com/gravestench/go-service-abstraction-example/pkg/app/services/database"
-	"github.com/gravestench/go-service-abstraction-example/pkg/app/services/flags_manager"
-	"github.com/gravestench/go-service-abstraction-example/pkg/app/services/router"
-	"github.com/gravestench/go-service-abstraction-example/pkg/app/services/session_middleware"
-	"github.com/gravestench/go-service-abstraction-example/pkg/app/services/static_assets"
-	"github.com/gravestench/go-service-abstraction-example/pkg/app/services/user"
-	"github.com/gravestench/go-service-abstraction-example/pkg/app/services/webserver"
+	"github.com/gravestench/go-service-abstraction-example/pkg/scenes/menu"
+	"github.com/gravestench/go-service-abstraction-example/pkg/scenes/sprite_test"
+	"github.com/gravestench/go-service-abstraction-example/pkg/services/input"
+	"github.com/gravestench/go-service-abstraction-example/pkg/services/mode"
+	"github.com/gravestench/go-service-abstraction-example/pkg/services/renderer"
+	"github.com/gravestench/go-service-abstraction-example/pkg/services/spritesheet"
+	"github.com/gravestench/go-service-abstraction-example/pkg/services/texture"
+	"github.com/gravestench/go-service-abstraction-example/pkg/services/update"
 )
 
 func main() {
 	a := app.New()
 
 	a.AddServices(
-		&flags_manager.Service{},
-		&config.Service{},
-		&user.Service{},
-		&router.Service{},
-		&webserver.Service{},
-		&database.Service{},
-		&session_middleware.Service{},
-		&static_assets.Service{},
+		//&flags_manager.Service{},
+		&renderer.Service{},
+		&input.Service{},
+		&update.Service{},
+		&mode.Service{},
+		&texture.Service{},
+		&spritesheet.Service{},
+
+		&menu.Scene{},
+		&sprite_test.Scene{},
 	)
 
-	a.Run()
+	mainthread.Run(a.Run)
 }

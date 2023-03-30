@@ -1,5 +1,5 @@
 .idea
-.testconfig
+config.json
 go.sum
 simplecert
 letsencrypt

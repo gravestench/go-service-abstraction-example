@@ -4,8 +4,8 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/gravestench/go-service-abstraction-example/pkg/app/services/abstract"
-	"github.com/gravestench/go-service-abstraction-example/pkg/app/services/logging"
+	"github.com/gravestench/go-service-abstraction-example/pkg/abstract"
+	"github.com/gravestench/go-service-abstraction-example/pkg/services/logging"
 )
 
 func New() *App {
