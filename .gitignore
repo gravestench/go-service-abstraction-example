@@ -1,5 +1,8 @@
+.DS_Store
 .idea
-.testconfig
+*.config
 go.sum
 simplecert
 letsencrypt
+*.s3db
+profiling

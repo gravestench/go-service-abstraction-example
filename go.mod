@@ -1,15 +1,18 @@
 module github.com/gravestench/go-service-abstraction-example
 
-go 1.18
+go 1.19
 
 require (
-	github.com/foomo/simplecert v1.8.4
+	github.com/foomo/simplecert v1.8.5
 	github.com/foomo/tlsconfig v0.0.0-20180418120404-b67861b076c9
+	github.com/gin-contrib/cors v1.4.0
 	github.com/gin-contrib/gzip v0.0.6
 	github.com/gin-contrib/sessions v0.0.5
 	github.com/gin-gonic/gin v1.9.0
 	github.com/jmoiron/sqlx v1.3.5
-	github.com/rs/zerolog v1.29.0
+	github.com/mattn/go-sqlite3 v2.0.3+incompatible
+	github.com/rs/zerolog v1.29.1
+	k8s.io/utils v0.0.0-20230406110748-d93618cff8a2
 )
 
 require (
@@ -25,12 +28,9 @@ require (
 	github.com/Azure/go-autorest/autorest/validation v0.3.1 // indirect
 	github.com/Azure/go-autorest/logger v0.2.0 // indirect
 	github.com/Azure/go-autorest/tracing v0.6.0 // indirect
-	github.com/Juniper/go-netconf v0.3.0 // indirect
 	github.com/OpenDNS/vegadns2client v0.0.0-20180418235048-a3fa4a771d87 // indirect
 	github.com/akamai/AkamaiOPEN-edgegrid-golang v1.0.1 // indirect
 	github.com/aliyun/alibaba-cloud-sdk-go v1.61.869 // indirect
-	github.com/antchfx/xmlquery v1.3.13 // indirect
-	github.com/antchfx/xpath v1.2.1 // indirect
 	github.com/aws/aws-sdk-go v1.36.29 // indirect
 	github.com/boj/redistore v0.0.0-20180917114910-cd5dcc76aeff // indirect
 	github.com/boombuler/barcode v1.0.1-0.20190219062509-6c824513bacc // indirect
@@ -56,7 +56,7 @@ require (
 	github.com/goccy/go-json v0.10.0 // indirect
 	github.com/gofrs/uuid v4.0.0+incompatible // indirect
 	github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e // indirect
-	github.com/golang/protobuf v1.5.2 // indirect
+	github.com/golang/protobuf v1.5.0 // indirect
 	github.com/gomodule/redigo v2.0.0+incompatible // indirect
 	github.com/goodhosts/hostsfile v0.0.7 // indirect
 	github.com/google/go-querystring v1.0.0 // indirect
